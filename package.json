@@ -14,9 +14,9 @@
   "keywords": [
     "woqu",
     "vue",
-    "components",
-    "q"
+    "components"
   ],
+  "author": "ling.zhong@woqutech.com",
   "license": "MIT",
   "dependencies": {
     "vue": "^2.5.17",

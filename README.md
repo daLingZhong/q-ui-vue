@@ -6,7 +6,7 @@ Q UI component for Vue.js
 npm install q-ui-vue
 
 # Usage
-import QUI from 'q-ui-vue'
+import QUI from 'q-ui-vue'  
 Vue.use(QUI)
 
 # License
