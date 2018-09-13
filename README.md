@@ -6,15 +6,17 @@ Q UI component for Vue.js
 npm install q-ui-vue
 
 # Usage
+```
 import QUI from 'q-ui-vue'  
 Vue.use(QUI)
+```
 
 # License
 MIT
 
 # Example
 npm install  
-npm run serve
+npm run serve  
 localhost:8080
 
 ## Tooltip
