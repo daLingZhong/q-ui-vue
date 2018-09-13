@@ -25,3 +25,4 @@ localhost:8080
 |position|Tooltip出现的位置|String|top/bottom/left/right|top|
 |content|显示的内容，也可以通过 `slot#content` 传入 DOM| String | / | / |
 |theme|默认提供的主题|String|Dark/Light|Dark|
+|trigger|触发方式|String|click/hover|hover|

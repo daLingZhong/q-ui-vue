@@ -71,6 +71,17 @@
       &lt;/q-tooltip&gt;
           </code>
         </pre>
+        <h3>点击触发</h3>
+        <q-tooltip trigger="click" content="点击弹出内容">
+          <button>点击</button>
+        </q-tooltip>
+        <pre>
+          <code>
+      &lt;q-tooltip trigger="click" content="点击弹出内容"&gt;
+        &lt;button&gt;点击&lt;/button&gt;
+      &lt;/q-tooltip&gt;
+          </code>
+        </pre>
       </div>
     </div>
   </div>

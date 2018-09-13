@@ -31,18 +31,32 @@ export default class QTooltip extends Vue {
     },
   }) private theme !: string
   @Prop(String) private content !: string
+  @Prop({
+    default: 'hover',
+    validator(value) {
+      return ['hover', 'click'].indexOf(value) >= 0
+    },
+  }) private trigger !: string
   private visible = false
 
   private mounted() {
     const tooltip = this.$refs.tooltip as HTMLDivElement
-    tooltip.addEventListener('mouseenter', this.open)
-    tooltip.addEventListener('mouseleave', this.close)
+    if (this.trigger === 'click') {
+      tooltip.addEventListener('click', this.onClick)
+    } else {
+      tooltip.addEventListener('mouseenter', this.open)
+      tooltip.addEventListener('mouseleave', this.close)
+    }
   }
 
   private beforeDestroy() {
     const tooltip = this.$refs.tooltip as HTMLDivElement
-    tooltip.removeEventListener('mouseenter', this.open)
-    tooltip.removeEventListener('mouseleave', this.close)
+    if (this.trigger === 'click') {
+      tooltip.removeEventListener('click', this.onClick)
+    } else {
+      tooltip.removeEventListener('mouseenter', this.open)
+      tooltip.removeEventListener('mouseleave', this.close)
+    }
   }
 
   private positionContent() {
@@ -89,15 +103,40 @@ export default class QTooltip extends Vue {
     }
   }
 
+  private onClickDocument (e) {
+    const tooltip = this.$refs.tooltip as HTMLDivElement
+    const contentWrapper = this.$refs.contentWrapper as HTMLDivElement
+    if (tooltip &&
+      (tooltip === e.target || tooltip.contains(e.target))
+    ) { return }
+    if (contentWrapper &&
+      (contentWrapper === e.target || contentWrapper.contains(e.target))
+    ) { return }
+    this.close()
+  }
+
   private open() {
     this.visible = true
     this.$nextTick(() => {
       this.positionContent()
+      document.addEventListener('click', this.onClickDocument)
     })
   }
 
   private close() {
     this.visible = false
+    document.removeEventListener('click', this.onClickDocument)
+  }
+
+  private onClick (event) {
+    const triggerWrapper = this.$refs.triggerWrapper as HTMLDivElement
+    if (triggerWrapper.contains(event.target)) {
+      if (this.visible === true) {
+        this.close()
+      } else {
+        this.open()
+      }
+    }
   }
 }
 </script>
