@@ -51,6 +51,8 @@ export default class QTooltip extends Vue {
     const arrow = this.$refs.arrow as HTMLSpanElement
     document.body.appendChild(contentWrapper)
     const {width, height, top, left} = triggerWrapper.getBoundingClientRect()
+    // const node: any = triggerWrapper.firstChild
+    // console.log(getComputedStyle(node).marginTop)
     const {height: contentHeight, width: contentWidth} = contentWrapper.getBoundingClientRect()
     const positions = {
       top: {
@@ -67,13 +69,13 @@ export default class QTooltip extends Vue {
       },
       left: {
         top: top + window.scrollY - 6,
-        left: left + window.scrollX - contentWidth - 6,
+        left: left + window.scrollX - contentWidth - 10,
         arrowTop: - (contentHeight / 2 - 2),
         arrowLeft: contentWidth - 8,
       },
       right: {
         top: top + window.scrollY - 6,
-        left: left + window.scrollX + width + 6,
+        left: left + window.scrollX + width + 10,
         arrowTop: - (contentHeight / 2  - 2),
         arrowLeft: -14,
       },
@@ -158,11 +160,11 @@ export default class QTooltip extends Vue {
     width: 8px;
     height: 8px;
   }
-  .tooltip__arrow__topLight::after {
+  /* .tooltip__arrow__topLight::after {
     box-shadow: 1px 2px 0px 0px rgba(0,0,0,.1);
-  }
+  } */
   .tooltip__arrow__topLight::before {
-    box-shadow: 2px 1px 0px 0px rgba(0,0,0,.1);    
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,.1);    
   }
   .tooltip__arrow__bottomDark,
   .tooltip__arrow__bottomLight{
@@ -185,11 +187,11 @@ export default class QTooltip extends Vue {
     width: 8px;
     height: 8px;
   }
-  .tooltip__arrow__bottomLight::after {
+  /* .tooltip__arrow__bottomLight::after {
     box-shadow: -1px -2px 0px 0px rgba(0,0,0,.1);
-  }
+  } */
   .tooltip__arrow__bottomLight::before {
-    box-shadow: -2px -1px 0px 0px rgba(0,0,0,.1);    
+    box-shadow: -1px -1px 2px 0px rgba(0,0,0,.1);    
   }
   .tooltip__arrow__leftDark,
   .tooltip__arrow__leftLight{
@@ -212,11 +214,11 @@ export default class QTooltip extends Vue {
     width: 8px;
     height: 8px;
   }
-  .tooltip__arrow__leftLight::after {
+  /* .tooltip__arrow__leftLight::after {
     box-shadow: 2px -1px 0px 0px rgba(0,0,0,.1);
-  }
+  } */
   .tooltip__arrow__leftLight::before {
-    box-shadow: 1px -2px 0px 0px rgba(0,0,0,.1);    
+    box-shadow: 1px -1px 2px 0px rgba(0,0,0,.1);    
   }
   .tooltip__arrow__rightDark,
   .tooltip__arrow__rightLight {
@@ -239,10 +241,10 @@ export default class QTooltip extends Vue {
     width: 8px;
     height: 8px;
   }
-  .tooltip__arrow__rightLight::after {
+  /* .tooltip__arrow__rightLight::after {
     box-shadow: -2px 1px 0px 0px rgba(0,0,0,.1);
-  }
+  } */
   .tooltip__arrow__rightLight::before {
-    box-shadow: -1px 2px 0px 0px rgba(0,0,0,.1);    
+    box-shadow: -1px 1px 2px 0px rgba(0,0,0,.1);    
   }
 </style>
