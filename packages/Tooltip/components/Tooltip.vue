@@ -103,7 +103,7 @@ export default class QTooltip extends Vue {
     }
   }
 
-  private onClickDocument (e) {
+  private onClickDocument(e) {
     const tooltip = this.$refs.tooltip as HTMLDivElement
     const contentWrapper = this.$refs.contentWrapper as HTMLDivElement
     if (tooltip &&
@@ -128,7 +128,7 @@ export default class QTooltip extends Vue {
     document.removeEventListener('click', this.onClickDocument)
   }
 
-  private onClick (event) {
+  private onClick(event) {
     const triggerWrapper = this.$refs.triggerWrapper as HTMLDivElement
     if (triggerWrapper.contains(event.target)) {
       if (this.visible === true) {

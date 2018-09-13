@@ -1,6 +1,8 @@
 import { QUIComponent } from './components'
 
 export type Theme = 'Dark' | 'Light'
+export type Position = 'top' | 'bottom' | 'left' | 'right'
+export type Trigger = 'click' | 'hover'
 
 /** Tooltip Component */
 export declare class QTooltip extends QUIComponent {
@@ -11,6 +13,8 @@ export declare class QTooltip extends QUIComponent {
   content: String
 
   /** Position of Tooltip */
-  position: String
+  position: Position
 
+  /** Trigger of Tooltip */
+  trigger: Trigger
 }
