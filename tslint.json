@@ -22,6 +22,7 @@
     "no-shadowed-variable": false,
     "max-classes-per-file": [true, 5, "exclude-class-expressions"],
     "no-unused-expression": false,
-    "max-line-length": false
+    "max-line-length": false,
+    "whitespace":false
   }
 }

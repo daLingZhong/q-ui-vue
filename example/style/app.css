@@ -1,0 +1,38 @@
+.content {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.components {
+  margin-top: 50px;
+}
+.line {
+  width: 100%;
+  height: 8px;
+  background-color: #fa8e3b;
+}
+.item__content {
+  text-align: center;
+  margin-top: 50px;
+}
+.item {
+  display: inline-block;
+  margin-left: 5px;
+}
+code, pre {
+  background: transparent;
+  text-shadow: none;
+  border: none;
+}
+pre {
+  text-align:left; 
+  margin: 20px auto; 
+  width: 800px; 
+  background-color: #000; 
+  color: #fff;
+}
+code {
+  font-family: Menlo,Monaco,Consolas,Courier,monospace
+}

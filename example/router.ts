@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from './views/Home.vue'
+import ButtonDemo from './views/components/ButtonDemo.vue'
+import Tooltip from './views/components/Tooltip.vue'
 
 Vue.use(Router);
 
@@ -14,6 +16,14 @@ export default new Router({
     {
       path: '/home',
       component: Home,
+    },
+    {
+      path: '/button',
+      component: ButtonDemo,
+    },
+    {
+      path: '/tooltip',
+      component: Tooltip,
     },
   ],
 });
