@@ -35,3 +35,14 @@ localhost:8080
 |loading|是否加载中状态|boolean|/|false|
 |disabled|是否禁用状态|boolean|/|false|
 |icon|图标类名|string|/|/|
+
+注：如果在button中使用自己的图标`<i></i>`需要自行调整图标的`margin`属性
+
+### ButtonGroup
+```
+  <q-button-group>
+    <q-button icon="search" type="primary"></q-button>
+    <q-button icon="search" type="primary"></q-button>
+    <q-button icon="search" type="primary"></q-button>
+  </q-button-group>
+```

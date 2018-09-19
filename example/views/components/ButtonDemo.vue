@@ -85,6 +85,35 @@
         </code>
       </pre>
     </div>
+    <div class="item__content">
+      <h3>按钮组</h3>
+      <q-button-group>
+        <q-button type="primary"><i class="icon icon-angle-left" style="margin-left: 0"></i>上一页</q-button>
+        <q-button type="primary">下一页<i class="icon icon-angle-right" style="margin-right: 0"></i></q-button>
+      </q-button-group>
+      <pre>
+        <code>
+    &lt;q-button-group&gt;
+      &lt;q-button type="primary"&gt;&lt;i class="icon icon-angle-left" style="margin-left: 0"&gt;&lt;/i&gt;上一页&lt;/q-button&gt;
+      &lt;q-button type="primary"&gt;下一页&lt;i class="icon icon-angle-right" style="margin-right: 0"&gt;&lt;/i&gt;&lt;/q-button&gt;
+    &lt;/q-button-group&gt;
+        </code>
+      </pre>
+      <q-button-group>
+        <q-button icon="search" type="primary"></q-button>
+        <q-button icon="search" type="primary"></q-button>
+        <q-button icon="search" type="primary"></q-button>
+      </q-button-group>
+      <pre>
+        <code>
+    &lt;q-button-group&gt;
+      &lt;q-button icon="search" type="primary"&gt;&lt;/q-button&gt;
+      &lt;q-button icon="search" type="primary"&gt;&lt;/q-button&gt;
+      &lt;q-button icon="search" type="primary"&gt;&lt;/q-button&gt;
+    &lt;/q-button-group&gt;
+        </code>
+      </pre>
+    </div>
   </div>
 </template>
 

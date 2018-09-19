@@ -1,20 +1,20 @@
 <template>
   <button 
-    class="button"
+    class="qbutton"
     ref="button"
     @click="handleClick"
     :disabled="loading || disabled"
     :class="[
-      `button__${size}`, 
-      `button__${type}`,
-      {'button__disabled__normal': buttonDisabled && (['normal', 'dashed', 'text'].indexOf(type) >= 0)},
-      {'button__disabled': buttonDisabled && (['primary', 'success', 'warning', 'danger'].indexOf(type) >= 0)}
+      `qbutton__${size}`, 
+      `qbutton__${type}`,
+      {'qbutton__disabled__normal': buttonDisabled && (['normal', 'dashed', 'text'].indexOf(type) >= 0)},
+      {'qbutton__disabled': buttonDisabled && (['primary', 'success', 'warning', 'danger'].indexOf(type) >= 0)}
     ]"
     :style="[{'cursor': mouseSyle}]"
   >
-    <i class="iconfont icon-loading button__loading" v-if="loading" ref="loadingIcon"></i>
+    <i class="iconfont icon-loading qbutton__loading" v-if="loading" ref="loadingIcon"></i>
     <i class="icon" :class="`icon-${icon}`" v-if="icon && !loading" ref="icon"></i>
-    <div class="button__content" ref="content">
+    <div class="qbutton__content" ref="content">
       <div v-if="!loading">
         <slot></slot>
       </div>
@@ -65,8 +65,7 @@ export default class QButton extends Vue {
       if ((this.$refs.loadingIcon as HTMLDivElement)) {
         (this.$refs.loadingIcon as HTMLDivElement).style.marginLeft = '0'
         this.haveContent = true
-      }
-      if ((this.$refs.icon as HTMLDivElement)) {
+      } else if ((this.$refs.icon as HTMLDivElement)) {
         (this.$refs.icon as HTMLDivElement).style.marginLeft = '0'
         this.haveContent = true
       }
@@ -96,7 +95,7 @@ export default class QButton extends Vue {
 </script>
 
 <style scoped>
-  .button {
+  .qbutton {
     font-size: 14px;
     border-radius: 2px;
     font-family: 'PingFangSC', 'Microsoft YaHei';
@@ -104,20 +103,20 @@ export default class QButton extends Vue {
     margin: 0 5px;
     color: #555555;
   }
-  .button i {
+  .qbutton i {
     display: inline-block;
     margin-right: 8px;
     color: #9195AA;
   }
-  .button__content {
+  .qbutton__content {
     display: inline-block;
     margin-top: -1px;
   }
-  .button__disabled {
+  .qbutton__disabled {
     opacity: .6;
     border-color: transparent;
   }
-  .button__disabled__normal {
+  .qbutton__disabled__normal {
     background-color: #f4f4f4 !important;
     border-color: #e4e6e8 !important;
     color: #a3a3a3 !important;
@@ -146,106 +145,104 @@ export default class QButton extends Vue {
         transform: rotate(360deg);
     }
   }
-  .button__loading {
+  .qbutton__loading {
     animation: spin 2s infinite linear;
   }
-  .button__large {
+  .qbutton__large {
     min-width: 78px;
     min-height: 36px;
     padding: 0 20px;
   }
-  .button__medium {
+  .qbutton__medium {
     min-width: 72px;
     min-height: 32px;
     padding: 0 16px;
   }
-  .button__large i,
-  .button__medium i {
+  .qbutton__large i,
+  .qbutton__medium i {
     margin: 0 8px;
   }
-  .button__small {
+  .qbutton__small {
     min-width: 56px;
     min-height: 28px;
     padding: 0 12px;
   }
-  .button__small i {
+  .qbutton__small i {
     margin: 0 6px;
   }
-  .button__mini {
+  .qbutton__mini {
     min-width: 48px;
     min-height: 24px;
     padding: 0 8px;
   }
-  .button__mini i {
+  .qbutton__mini i {
     margin: 0 4px
   }
-  .button__normal {
+  .qbutton__normal {
     background-color: #fff;
     border: 1px solid #e4e6e8;
   }
-  .button__normal:hover {
-    color: #44A0f1;
-    border-color:#44A0f1;
-  }
-  .button__success {
+  .qbutton__success {
     background-color: #4ad886;
     border: 1px solid #4ad886;
     color: #fff;
   }
-  .button__success:hover {
-    opacity: .6;
-    border-color: transparent;
-  }
-  .button__primary {
+  .qbutton__primary {
     background-color: #44A0f1;
     border: 1px solid #44A0f1;
     color: #fff;
   }
-  .button__primary:hover {
-    opacity: .6;
-    border-color: transparent;
-  }
-  .button__warning {
+  .qbutton__warning {
     background-color: #fa8e3b;
     border: 1px solid #fa8e3b;
     color: #fff;
   }
-  .button__warning:hover {
-    opacity: .6;
-    border-color: transparent;
-  }
-  .button__danger {
+  .qbutton__danger {
     background-color: #f83b3b;
     border: 1px solid #f83b3b;
     color: #fff;
   }
-  .button__danger:hover {
+  .qbutton__danger:hover,
+  .qbutton__warning:hover,
+  .qbutton__success:hover,
+  .qbutton__primary:hover {
     opacity: .6;
     border-color: transparent;
   }
-  .button__success i,
-  .button__warning i,
-  .button__danger i,
-  .button__primary i {
+  .qbutton__danger:active,
+  .qbutton__warning:active,
+  .qbutton__success:active,
+  .qbutton__primary:active {
+    opacity: 1;
+  }
+  .qbutton__success i,
+  .qbutton__warning i,
+  .qbutton__danger i,
+  .qbutton__primary i {
     color: #fff
   }
-  .button__dashed {
+  .qbutton__dashed {
     background-color: #fff;
     border: 1px dashed #e4e6e8;
   }
-  .button__dashed:hover{
+  .qbutton__normal:hover,
+  .qbutton__dashed:hover{
     color: #44A0f1;
     border-color:#44A0f1;
   }
-  .button__text {
+  .qbutton__normal:active,
+  .qbutton__dashed:active{
+    color: #555555;
+    border-color:#e4e6e8;
+  }
+  .qbutton__text {
     background-color: transparent;
     border: none;
     min-width: auto;
     padding: 0;
     font-size: 13px;
   }
-  .button__text:hover {
+  .qbutton__text:hover {
     color: #44A0f1;
   }
 </style>
-

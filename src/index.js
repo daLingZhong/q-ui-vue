@@ -1,7 +1,8 @@
 import Tooltip from "../packages/Tooltip/index.js";
 import Button from "../packages/Button/index.js";
+import ButtonGroup from "../packages/ButtonGroup/index.js";
 
-const components = [Tooltip, Button];
+const components = [Tooltip, Button, ButtonGroup];
 
 const install = function(Vue) {
   if (install.installed) {
@@ -20,6 +21,7 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   Button,
+  ButtonGroup,
   Tooltip,
   install,
 };
