@@ -1,7 +1,8 @@
 <template>
   <nav>
     <router-link to="tooltip">tooltip</router-link><br>
-    <router-link to="button">button</router-link>
+    <router-link to="button">button</router-link><br>
+    <router-link to="tabs">tabs</router-link>
   </nav>
 </template>
 
@@ -14,7 +15,7 @@ export default class MenuBar extends Vue {}
 
 <style>
   nav {
-    width: 180px;
+    width: 120px;
     height: 500px;
     background-color: rgb(238, 238, 238);
     position: fixed;

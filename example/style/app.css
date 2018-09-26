@@ -1,3 +1,6 @@
+body, html {
+  background-color: #fff;
+}
 .content {
   height: 100%;
   width: 80%;

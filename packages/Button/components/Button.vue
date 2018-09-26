@@ -18,7 +18,7 @@
       <div v-if="!loading">
         <slot></slot>
       </div>
-      <div v-if="loading && haveContent">Loading...</div>
+      <div v-if="loading && haveContent" style="margin-right: 10px;">Loading<span class="dotting"></span></div>
     </div>
   </button>
 </template>
@@ -236,7 +236,7 @@ export default class QButton extends Vue {
     border-color:#e4e6e8;
   }
   .qbutton__text {
-    background-color: transparent;
+    background-color: transparent !important;
     border: none;
     min-width: auto;
     padding: 0;
@@ -244,5 +244,43 @@ export default class QButton extends Vue {
   }
   .qbutton__text:hover {
     color: #44A0f1;
+  }
+
+  @keyframes dot {
+    25% {
+      box-shadow: none;
+    }
+    50% {
+      box-shadow: 2px 0 currentColor;
+    }
+    75% {
+      box-shadow: 2px 0 currentColor, 6px 0 currentColor;
+    }
+  }
+
+  @-webkit-keyframes dot {
+    25% {
+      box-shadow: none;
+    }
+    50% {
+      box-shadow: 2px 0 currentColor;
+    }
+    75% {
+      box-shadow: 2px 0 currentColor, 6px 0 currentColor;
+    }
+  }
+
+  .dotting {
+    display: inline-block;
+    min-width: 2px;
+    min-height: 2px;
+    box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor;
+    animation: dot 4s infinite step-start both;
+  }
+  .dotting:before {
+    content: '...'
+  }
+  .dotting::before {
+    content: ''
   }
 </style>

@@ -46,3 +46,22 @@ localhost:8080
     <q-button icon="search" type="primary"></q-button>
   </q-button-group>
 ```
+
+## Tabs
+### Tab
+|参数|说明|类型|可选值|默认值|
+|-|-|-|-|-|
+|type|标签页的主题|string|card|null|
+|position|布局方向|string|top/bottom/left/right|top|
+|editable|是否编辑|boolean|/|false|
+### Tab Event
+|事件名称|说明|回调参数|
+|-|-|-|-|-|
+|tab-add|点击tab新增按钮后触发|/|
+### TabPane
+|参数|说明|类型|可选值|默认值|
+|-|-|-|-|-|
+|label|标签页名|string|/|/|
+|active|默认选中|boolean|/|false|
+|disabled|是否禁用|boolean|/|false|
+|icon|图标|string|/|/|

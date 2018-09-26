@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue'
 import ButtonDemo from './views/components/ButtonDemo.vue'
 import Tooltip from './views/components/Tooltip.vue'
+import Tabs from './views/components/Tabs.vue'
 
 Vue.use(Router);
 
@@ -20,6 +21,10 @@ export default new Router({
     {
       path: '/button',
       component: ButtonDemo,
+    },
+    {
+      path: '/tabs',
+      component: Tabs,
     },
     {
       path: '/tooltip',
