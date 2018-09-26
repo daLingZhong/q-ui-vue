@@ -21,7 +21,7 @@
         {{ tab.label }}
         <i v-if="editable" class="icon icon-close" @click.stop="handleDelete(index)"></i>
       </li>
-      <i v-if="editable" class="icon icon-add qtab__addButton" @click="addPane()"></i>
+      <i v-if="editable" class="icon icon-plus qtab__addButton" @click="addPane()"></i>
     </ul>
     <slot v-if="position === 'top' || position === 'left'"></slot>
   </div>
