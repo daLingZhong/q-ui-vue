@@ -71,6 +71,7 @@ export default class QTabs extends Vue {
   }
 
   private handleDelete(index) {
+    this.$emit('tab-remove', this.tabPanes[index].label)
     this.selectedIndex = this.tabPanes.length - 2
     if (this.tabPanes.length > 1) {
       this.tabPanes[this.selectedIndex].selected = false
@@ -102,7 +103,7 @@ export default class QTabs extends Vue {
   }
 
   private select(index) {
-    // this.$emit('tab-selected', index)
+    this.$emit('tab-selected', this.tabPanes[index])
     this.selectedIndex = index
   }
 

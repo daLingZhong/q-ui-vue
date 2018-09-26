@@ -58,6 +58,8 @@ localhost:8080
 |事件名称|说明|回调参数|
 |-|-|-|-|-|
 |tab-add|点击tab新增按钮后触发|/|
+|tab-selected|tab 被选中时触发|被选中的标签 tab 实例|
+|tab-remove|点击 tab 移除按钮后触发|被删除的标签的 label|
 ### TabPane
 |参数|说明|类型|可选值|默认值|
 |-|-|-|-|-|
