@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component, Prop, Watch } from 'vue-property-decorator'
 
 @Component
 export default class QTooltip extends Vue {
@@ -38,6 +38,7 @@ export default class QTooltip extends Vue {
     },
   }) private trigger !: string
   private visible = false
+  private triggerWrapper: any = {}
 
   private mounted() {
     const tooltip = this.$refs.tooltip as HTMLDivElement
@@ -51,20 +52,28 @@ export default class QTooltip extends Vue {
 
   private beforeDestroy() {
     const tooltip = this.$refs.tooltip as HTMLDivElement
+    const triggerWrapper = this.$refs.triggerWrapper as HTMLDivElement
     if (this.trigger === 'click') {
       tooltip.removeEventListener('click', this.onClick)
     } else {
       tooltip.removeEventListener('mouseenter', this.open)
       tooltip.removeEventListener('mouseleave', this.close)
     }
+    triggerWrapper.removeEventListener('ondrag', this.positionContent)
+  }
+
+  private createContent() {
+    const contentWrapper = this.$refs.contentWrapper as HTMLDivElement
+    document.body.appendChild(contentWrapper)
+    this.positionContent()
   }
 
   private positionContent() {
     const contentWrapper = this.$refs.contentWrapper as HTMLDivElement
     const triggerWrapper = this.$refs.triggerWrapper as HTMLDivElement
     const arrow = this.$refs.arrow as HTMLSpanElement
-    document.body.appendChild(contentWrapper)
     const {width, height, top, left} = triggerWrapper.getBoundingClientRect()
+    triggerWrapper.addEventListener('ondrag', this.positionContent)
     // const node: any = triggerWrapper.firstChild
     // console.log(getComputedStyle(node).marginTop)
     const {height: contentHeight, width: contentWidth} = contentWrapper.getBoundingClientRect()
@@ -118,7 +127,7 @@ export default class QTooltip extends Vue {
   private open() {
     this.visible = true
     this.$nextTick(() => {
-      this.positionContent()
+      this.createContent()
       document.addEventListener('click', this.onClickDocument)
     })
   }

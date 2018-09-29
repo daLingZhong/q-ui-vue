@@ -79,14 +79,14 @@
     </div>
     <div class="item__content">
       <h3>可编辑状态</h3>
-      <q-tabs editable v-on:tab-add="add">
+      <q-tabs editable @tab-add="add">
         <q-tab-pane :label="item.label" v-for="(item, index, key) in panes" :key="key">
           {{item.content}}
         </q-tab-pane>
       </q-tabs>
       <pre>
         <code>    
-    &lt;q-tabs editable v-on:addPane="add"&gt;
+    &lt;q-tabs editable @tab-add="add"&gt;
       &lt;q-tab-panen :label="item.label" v-for="(item, index, key) in panes" :key="key"&gt;
          &#123; &#123;item.content&#125; &#125;
       &lt;/q-tab-panen&gt;

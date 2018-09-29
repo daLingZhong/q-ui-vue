@@ -3,11 +3,11 @@
 pages:
   stage: deploy
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+    - "npm install"
+    - "npm run build"
+    - "cp public/index.html"
   artifacts:
     paths:
-    - public
+    - lib
   only:
   - master
