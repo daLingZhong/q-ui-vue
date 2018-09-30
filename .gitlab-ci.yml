@@ -5,8 +5,10 @@ pages:
   script:
     - "echo $HOME"
     - "whoami"
-    - "PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\" && npm install"
-    - "PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\" && npm run build"
+    - "export PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\""
+    - "env | grep PATH"
+    - "npm install"
+    - "npm run build"
   artifacts:
     paths:
     - lib
