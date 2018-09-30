@@ -5,7 +5,7 @@ pages:
   script:
     - "echo $HOME"
     - "whoami"
-    - "export PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\""
+    - "export PATH=\"$HOME/bin:$HOME/.local/bin:$NVM_BIN:$PATH\""
     - "env | grep PATH"
     - "npm install"
     - "npm run build"
