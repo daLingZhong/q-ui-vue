@@ -21,7 +21,8 @@ localhost:8080
 
 ## Demo
 
-online example:    [https://dalingzhong.github.io/q-ui-vue/](https://dalingzhong.github.io/q-ui-vue/)
+online example:    
+[https://dalingzhong.github.io/q-ui-vue/](https://dalingzhong.github.io/q-ui-vue/)
 
 ## Tooltip
 |参数|说明|类型|可选值|默认值|
