@@ -3,9 +3,10 @@
 pages:
   stage: deploy
   script:
-    - "PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\""
-    - "npm install"
-    - "npm run build"
+    - "echo $HOME"
+    - "whoami"
+    - "PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\" && npm install"
+    - "PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\" && npm run build"
   artifacts:
     paths:
     - lib
