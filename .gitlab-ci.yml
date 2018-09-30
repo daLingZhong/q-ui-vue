@@ -3,8 +3,9 @@
 pages:
   stage: deploy
   script:
-    - "/home/gitlab-runner/.nvm/versions/node/v8.12.0/bin/npm install"
-    - "/home/gitlab-runner/.nvm/versions/node/v8.12.0/bin/npm run build"
+    - "PATH=\"$HOME/bin:$HOME/.local/bin:$PATH\""
+    - "npm install"
+    - "npm run build"
   artifacts:
     paths:
     - lib
