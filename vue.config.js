@@ -1,6 +1,6 @@
 module.exports = {
   lintOnSave: true,
-  outputDir: 'lib',
+  outputDir: 'docs',
   baseUrl: './',
   productionSourceMap: false,
   filenameHashing: false,
