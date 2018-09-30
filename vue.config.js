@@ -1,6 +1,7 @@
 module.exports = {
   lintOnSave: true,
   outputDir: 'lib',
+  baseUrl: './',
   productionSourceMap: false,
   filenameHashing: false,
   // configureWebpack:(config)=>{
