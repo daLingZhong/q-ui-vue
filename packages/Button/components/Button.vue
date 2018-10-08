@@ -12,7 +12,7 @@
     ]"
     :style="[{'cursor': mouseSyle}]"
   >
-    <i class="iconfont icon-loading qbutton__loading" v-if="loading" ref="loadingIcon"></i>
+    <i class="icon icon-loading qbutton__loading" v-if="loading" ref="loadingIcon"></i>
     <i class="icon" :class="`icon-${icon}`" v-if="icon && !loading" ref="icon"></i>
     <div class="qbutton__content" ref="content">
       <div v-if="!loading">

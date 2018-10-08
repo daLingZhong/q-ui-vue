@@ -88,8 +88,8 @@
     <div class="item__content">
       <h3>按钮组</h3>
       <q-button-group>
-        <q-button type="primary"><i class="icon icon-angle-left" style="margin-left: 0"></i>上一页</q-button>
-        <q-button type="primary">下一页<i class="icon icon-angle-right" style="margin-right: 0"></i></q-button>
+        <q-button type="primary"><i class="icon icon-left" style="margin-left: -5px"></i>上一页</q-button>
+        <q-button type="primary">下一页<i class="icon icon-right" style="margin-right: -5px"></i></q-button>
       </q-button-group>
       <pre>
         <code>

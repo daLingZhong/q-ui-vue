@@ -1,18 +1,33 @@
+const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
   lintOnSave: true,
-  outputDir: 'docs',
+  outputDir: './docs',
   baseUrl: './',
   productionSourceMap: false,
   filenameHashing: false,
-  // configureWebpack:(config)=>{
-  //   //入口文件
-  //   delete config.entry.app
-  //   config.entry.index = './src/index.js'
-  // },
-  pages: {
-    index: {
-      entry: 'example/main.ts',
-      template: `./public/index.html`
+  configureWebpack: {
+    entry: {
+      app: path.resolve(__dirname, './example/main.ts'),
     },
-  }
+    // optimization: {
+    //   minimizer: [
+    //     // we specify a custom UglifyJsPlugin here to get source maps in production
+    //     new UglifyJsPlugin({
+    //       uglifyOptions: {
+    //         compress: {},
+    //         mangle: {}
+    //       }
+    //     })
+    //   ]
+    // }
+    // 压缩后代码会插件会不被执行，这里先用测试环境防止压缩
+  },
+  chainWebpack: config => {
+    config.module
+      .rule('js')
+      .include
+      .add(path.resolve(__dirname, './example'))
+  },
 }
