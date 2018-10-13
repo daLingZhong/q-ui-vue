@@ -10,7 +10,7 @@ export declare class QTooltip extends QUIComponent {
   theme: Theme
 
   /** Display content, can be overridden by slot#content */
-  content: String
+  content: string
 
   /** Position of Tooltip */
   position: Position

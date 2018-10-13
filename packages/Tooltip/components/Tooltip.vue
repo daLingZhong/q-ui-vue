@@ -82,13 +82,13 @@ export default class QTooltip extends Vue {
         top: top + window.scrollY - contentHeight - 14,
         left: left + window.scrollX + (width - contentWidth) / 2,
         arrowLeft: contentWidth / 2 - 14,
-        arrowTop: 8,
+        arrowTop: 10,
       },
       bottom: {
         top: top + height + window.scrollY + 8,
         left: left + (width - contentWidth) / 2 - window.scrollX,
         arrowLeft: contentWidth / 2 - 14,
-        arrowTop: - (contentHeight - 2),
+        arrowTop: - (contentHeight - 4),
       },
       left: {
         top: top + window.scrollY - 6,
@@ -162,16 +162,16 @@ export default class QTooltip extends Vue {
     text-align: center;
     box-sizing: border-box;
     border-radius: 4px;
-    padding: 8px 8px;
+    padding: 10px 8px;
     font-size: 12px;
   }
   .tooltip__contentDark {
-    color: #ffffff;
-    background-color: #000000;
+    color: #d3d3d3;
+    background-color: #414141;
   }
   .tooltip__contentLight {
     background-color: #fff;
-    color: #000000;
+    color: #414141;
     box-shadow:  0px 2px 8px rgba(0,0,0,.15);
   }
   .fade-enter-active, .fade-leave-active {
@@ -192,7 +192,7 @@ export default class QTooltip extends Vue {
     border-width: 6px 6px 0;
   }
   .tooltip__arrow__topDark {
-    border-color: #000000 transparent transparent;
+    border-color: #414141 transparent transparent;
   }
   .tooltip__arrow__topLight {
     border-color: #fff transparent transparent;
@@ -219,7 +219,7 @@ export default class QTooltip extends Vue {
     border-width:0 6px 6px;
   }
   .tooltip__arrow__bottomDark {
-    border-color:transparent transparent #000000;
+    border-color:transparent transparent #414141;
   }
   .tooltip__arrow__bottomLight {
     border-color:transparent transparent #fff;
@@ -246,7 +246,7 @@ export default class QTooltip extends Vue {
     border-width:6px 0 6px 6px;
   }
   .tooltip__arrow__leftDark {
-    border-color:transparent transparent transparent #000000;
+    border-color:transparent transparent transparent #414141;
   }
   .tooltip__arrow__leftLight{
     border-color:transparent transparent transparent #fff;
@@ -273,7 +273,7 @@ export default class QTooltip extends Vue {
     border-width:6px 6px 6px 0;
   }
   .tooltip__arrow__rightDark {
-    border-color:transparent #000000 transparent transparent;
+    border-color:transparent #414141 transparent transparent;
   }
   .tooltip__arrow__rightLight {
     border-color:transparent #fff transparent transparent;

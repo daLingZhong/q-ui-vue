@@ -2,7 +2,8 @@
   <nav>
     <router-link to="tooltip">tooltip</router-link><br>
     <router-link to="button">button</router-link><br>
-    <router-link to="tabs">tabs</router-link>
+    <router-link to="tabs">tabs</router-link><br>
+    <router-link to="input">input</router-link>
   </nav>
 </template>
 

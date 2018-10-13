@@ -61,7 +61,7 @@ online example:
 |editable|是否编辑|boolean|/|false|
 ### Tab Event
 |事件名称|说明|回调参数|
-|-|-|-|-|-|
+|-|-|-|
 |tab-add|点击tab新增按钮后触发|/|
 |tab-selected|tab 被选中时触发|被选中的标签 tab 实例|
 |tab-remove|点击 tab 移除按钮后触发|被删除的标签的 label|
@@ -72,3 +72,38 @@ online example:
 |active|默认选中|boolean|/|false|
 |disabled|是否禁用|boolean|/|false|
 |icon|图标|string|/|/|
+
+
+## Input
+### Input Attributes
+|参数|说明|类型|可选值|默认值|
+|-|-|-|-|-|
+|type|类型|string|text/textarea|text|
+|value|绑定值|string/number|/|/|
+|maxlength|原生属性，最大输入长度|number|/|/|
+|minlength|原生属性，最小输入长度|number|/|/|
+|placeholder|输入框占位文本|string|/|"请输入内容"|
+|disabled|是否禁用|boolean|/|false|
+|size|输入框尺寸，只在 `type = "text"` 时生效|string|large/medium/small|large|
+|prefix|输入框头部图标|string|/|/|
+|suffix|输入框尾部图标|string|/|/|
+|name|原生属性|string|/|/|
+|max|原生属性，设置最大值|/|/|/|
+|min|原生属性，设置最小值|/|/|/|
+|step|原生属性，设置输入字段的合法数字间隔|/|/|/|
+|autofocus|原生属性，自动获取焦点|boolean|true/false|false|
+
+### Input Slots
+|name|说明|
+|-|-|
+|prefix|输入框头部内容，只对 `type="text"` 有效|
+|suffix|输入框尾部内容，只对 `type="text"` 有效|
+|prepend|输入框前置内容，只对 `type="text"` 有效|
+|append|输入框后置内容，只对 `type="text"` 有效|
+
+### Input Events
+|事件名称|说明|回调参数|
+|-|-|-|
+|blur|在 Input 失去焦点时触发|(event: Event)|
+|focus|在 Input 获得焦点时触发|(event: Event)|
+|change|在 Input 值改变时触发|(value: string | number)|

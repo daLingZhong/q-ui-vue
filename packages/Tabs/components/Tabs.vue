@@ -159,6 +159,10 @@ export default class QTabs extends Vue {
     width: 100%;
     text-align: left;
   }
+  .qtab > ul {
+    padding: 0;
+    list-style: none;
+  }
   .qtab__addButton {
     line-height: 40px;
     font-size: 16px;
@@ -171,7 +175,7 @@ export default class QTabs extends Vue {
     margin:0 2px 0 0 !important;
   }
   .qtab__list__card__active {
-    color: #ff6e3d !important;
+    color: #44a0f1 !important;
   }
   .qtab__list__card__active::after{
     content: '';
@@ -179,7 +183,6 @@ export default class QTabs extends Vue {
     width: 100%;
     height: 1px;
     display: block;
-    margin-top: -1px;
     position: absolute;
     left: 0;
   }
@@ -249,7 +252,7 @@ export default class QTabs extends Vue {
   .qtab__active-horizontal,
   .qtab__active-left,
   .qtab__active-right {
-    color: #ff6e3d
+    color: #44a0f1
   }
   .qtab__disabled {
     color: #999999;
@@ -260,7 +263,7 @@ export default class QTabs extends Vue {
     display: block;
     position: absolute;
     height: 2px;
-    background-color: #ff6e3d;
+    background-color: #44a0f1;
     animation: width .5s forwards;
     margin-top: -1px;
   }
@@ -270,7 +273,7 @@ export default class QTabs extends Vue {
     display: block;
     position: absolute;
     width: 2px;
-    background-color: #ff6e3d;
+    background-color: #44a0f1;
     height: 40px;
     animation: height .5s forwards;
   }

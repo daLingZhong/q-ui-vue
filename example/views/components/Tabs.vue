@@ -11,7 +11,7 @@
         <q-tab-pane label="Tab3" icon="search">我是Tab3的内容</q-tab-pane>
         <q-tab-pane label="Tab4" disabled>我是Tab4的内容</q-tab-pane>
       </q-tabs>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-tabs&gt;
       &lt;q-tab-panen label="Tab1" active&gt;我是Tab1的内容&lt;q-tab-panen&gt;
@@ -35,7 +35,7 @@
         <q-tab-pane label="Tab2">我是Tab2的内容</q-tab-pane>
         <q-tab-pane label="Tab3">我是Tab3的内容</q-tab-pane>
       </q-tabs>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;select value="top" v-model="position"&gt;
       &lt;option value="top"&gt;Top&lt;option&gt;
@@ -67,7 +67,7 @@
         <q-tab-pane label="Tab2" active>我是Tab2的内容</q-tab-pane>
         <q-tab-pane label="Tab3">我是Tab3的内容</q-tab-pane>
       </q-tabs>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-tabs type="card"&gt;
       &lt;q-tab-panen label="Tab1"&gt;我是Tab1的内容&lt;/q-tab-panen&gt;
@@ -84,7 +84,7 @@
           {{item.content}}
         </q-tab-pane>
       </q-tabs>
-      <pre>
+      <pre v-highlight>
         <code>    
     &lt;q-tabs editable @tab-add="add"&gt;
       &lt;q-tab-panen :label="item.label" v-for="(item, index, key) in panes" :key="key"&gt;
@@ -92,6 +92,7 @@
       &lt;/q-tab-panen&gt;
     &lt;/q-tabs&gt;
 
+  &lt;script&gt;
     export default {
       data: {
         return {
@@ -114,6 +115,7 @@
         }
       }
     }
+  &lt;/script&gt;
         </code>
       </pre>
     </div>

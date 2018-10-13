@@ -24,7 +24,7 @@
           <button>右边</button>
         </q-tooltip>
       </div>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-tooltip content="上方文字提示" position="top"&gt;
       &lt;button&gt;上面&lt;/button&gt;
@@ -42,7 +42,7 @@
           <button>白色</button>
         </q-tooltip>
       </div>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-tooltip content="白色主题" theme="Light" position="bottom"&gt;
       &lt;button&gt;白色&lt;/button&gt;
@@ -59,7 +59,7 @@
           </template>
         </q-tooltip>
       </div>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-tooltip&gt;
       &lt;button&gt;支持HTML&lt;/button&gt;
@@ -74,7 +74,7 @@
       <q-tooltip trigger="click" content="点击弹出内容">
         <button>点击</button>
       </q-tooltip>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-tooltip trigger="click" content="点击弹出内容"&gt;
       &lt;button&gt;点击&lt;/button&gt;
@@ -90,3 +90,11 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 @Component
 export default class Tooltip extends Vue {}
 </script>
+
+<style scoped>
+  div[class="item"] {
+    display: inline-block;
+    margin: 0 5px;
+  }
+</style>
+

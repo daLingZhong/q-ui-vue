@@ -3,6 +3,7 @@ import Button from "../packages/Button/index.js";
 import ButtonGroup from "../packages/ButtonGroup/index.js";
 import Tabs from "../packages/Tabs/index.js";
 import TabPane from "../packages/TabPane/index.js";
+import Input from "../packages/Input/index.js";
 
 const components = [
   Tooltip,
@@ -10,6 +11,7 @@ const components = [
   ButtonGroup,
   Tabs,
   TabPane,
+  Input,
 ];
 
 const install = function(Vue) {
@@ -32,5 +34,6 @@ export default {
   TabPane,
   Tabs,
   Tooltip,
+  Input,
   install,
 };

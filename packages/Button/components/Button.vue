@@ -59,7 +59,7 @@ export default class QButton extends Vue {
     if (getComputedStyle((this.$refs.content as HTMLDivElement)).width === '0px') {
       const button = this.$refs.button as HTMLDivElement
       button.style.padding = '0'
-      button .style.minWidth = 'auto'
+      button.style.minWidth = 'auto'
       this.haveContent = false
     } else {
       if ((this.$refs.loadingIcon as HTMLDivElement)) {

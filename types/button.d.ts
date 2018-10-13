@@ -6,7 +6,7 @@ export type Size = 'large' | 'medium' | 'small' | 'mini'
 /** Button Component */
 export declare class QButton extends QUIComponent {
   /** Icon name */
-  icon: String
+  icon: string
 
   /** Button type */
   type: Type
@@ -15,8 +15,8 @@ export declare class QButton extends QUIComponent {
   size: Size
 
   /** disabled state of button */
-  disabled: Boolean
+  disabled: boolean
 
   /** loading state of button */
-  loading: Boolean
+  loading: boolean
 }

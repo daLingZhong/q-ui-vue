@@ -14,7 +14,7 @@
         <q-button type="warning">警告</q-button>
         <q-button type="danger">危险</q-button>
       </div>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-button&gt;默认&lt;/q-button&gt;
     &lt;q-button type="primary"&gt;主要&lt;/q-button&gt;
@@ -32,7 +32,7 @@
       <q-button icon="search">搜索</q-button>
       <q-button icon="search" type="primary"></q-button>
       <q-button icon="search" type="primary">搜索</q-button>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-button icon="search"&gt;&lt;/q-button&gt;
     &lt;q-button icon="search"&gt;搜索&lt;/q-button&gt;
@@ -47,7 +47,7 @@
       <q-button>默认</q-button>
       <q-button size="small">小号</q-button>
       <q-button size="mini">超小</q-button>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-button size="large"&gt;大号&lt;/q-button&gt;
     &lt;q-button&gt;默认&lt;/q-button&gt;
@@ -62,7 +62,7 @@
       <q-button type="primary" disabled>主要</q-button>
       <q-button type="dashed" disabled>虚线</q-button>
       <q-button type="text" disabled>文字按钮</q-button>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-button disabled&gt;默认&lt;/q-button&gt;
     &lt;q-button type="primary" disabled&gt;主要&lt;/q-button&gt;
@@ -77,7 +77,7 @@
       <q-button :loading="true" type="primary">点击</q-button>
       <q-button :loading="isLoading1" type="primary" icon="search" @click="click1"></q-button>
       <!-- <q-button :loading="true" type="primary" icon="search"></q-button> -->
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-button :loading="isLoading" type="primary" @click="click"&gt;点击&lt;/q-button&gt;
     &lt;q-button :loading="true" type="primary"&gt;点击&lt;/q-button&gt;
@@ -91,7 +91,7 @@
         <q-button type="primary"><i class="icon icon-left" style="margin-left: -5px"></i>上一页</q-button>
         <q-button type="primary">下一页<i class="icon icon-right" style="margin-right: -5px"></i></q-button>
       </q-button-group>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-button-group&gt;
       &lt;q-button type="primary"&gt;&lt;i class="icon icon-angle-left" style="margin-left: 0"&gt;&lt;/i&gt;上一页&lt;/q-button&gt;
@@ -104,7 +104,7 @@
         <q-button icon="search" type="primary"></q-button>
         <q-button icon="search" type="primary"></q-button>
       </q-button-group>
-      <pre>
+      <pre v-highlight>
         <code>
     &lt;q-button-group&gt;
       &lt;q-button icon="search" type="primary"&gt;&lt;/q-button&gt;

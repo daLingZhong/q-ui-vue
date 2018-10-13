@@ -21,22 +21,30 @@ body, html {
   margin-top: 50px;
   margin-bottom: 20px;
 }
-.item {
+/* .item {
   display: inline-block;
   margin-left: 5px;
-}
-code, pre {
-  background: transparent;
-  text-shadow: none;
-  border: none;
-}
+} */
 pre {
   text-align:left; 
   margin: 20px auto; 
   width: 800px; 
-  background-color: #000; 
-  color: #fff;
 }
 code {
-  font-family: Menlo,Monaco,Consolas,Courier,monospace
+  font-family: Lucida Console,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:#c9c9c9;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:#c9c9c9;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:#c9c9c9;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:#c9c9c9;
 }
