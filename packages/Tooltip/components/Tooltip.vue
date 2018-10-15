@@ -4,7 +4,13 @@
       <div ref="contentWrapper" :class="[{'tooltip__contentDark' : theme === 'Dark'},{'tooltip__contentLight': theme === 'Light'}]" class="tooltip__content" v-if="visible">
         {{ content }}
         <slot name="content" :close="close"></slot>
-        <span ref="arrow" class="tooltip__arrow" :class="[`tooltip__arrow__${position}${theme}`]"></span>
+        <span 
+          ref="arrow" 
+          class="tooltip__arrow" 
+          :class="[
+          `tooltip__arrow__${filterPos(position)}${theme}`
+          ]"
+        ></span>
       </div>
     </transition>
     <span ref="triggerWrapper" style="display: inline-block;">
@@ -21,7 +27,7 @@ export default class QTooltip extends Vue {
   @Prop({
     default: 'top',
     validator(value) {
-      return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
+      return ['top', 'bottom', 'left', 'right', 'topLeft'].indexOf(value) >= 0
     },
   }) private position !: string
   @Prop({
@@ -60,6 +66,18 @@ export default class QTooltip extends Vue {
       tooltip.removeEventListener('mouseleave', this.close)
     }
     triggerWrapper.removeEventListener('ondrag', this.positionContent)
+  }
+
+  private filterPos(value) {
+    if (value.length > 6) {
+      if (value.substring(0, 3) === 'top') {
+        return 'top'
+      } else if (value.substring(0, 6) === 'bottom') {
+        return 'bottom'
+      }
+    } else {
+      return value
+    }
   }
 
   private createContent() {
@@ -102,6 +120,30 @@ export default class QTooltip extends Vue {
         arrowTop: - (contentHeight / 2  - 2),
         arrowLeft: -14,
       },
+      topLeft: {
+        top: top + window.scrollY - contentHeight - 14,
+        left: left + window.scrollX,
+        arrowLeft: 8,
+        arrowTop: 10,
+      },
+      topRight: {
+        top: top + window.scrollY - contentHeight - 14,
+        left: left - contentWidth + width + window.scrollX,
+        arrowLeft: contentWidth - width + 8,
+        arrowTop: 10,
+      },
+      bottomLeft: {
+        top: top + height + window.scrollY + 8,
+        left: left + window.scrollX,
+        arrowLeft: 8,
+        arrowTop: - (contentHeight - 4),
+      },
+      bottomRight: {
+        top: top + height + window.scrollY + 8,
+        left: left - contentWidth + width + window.scrollX,
+        arrowLeft: contentWidth - width + 8,
+        arrowTop: - (contentHeight - 4),
+      }
     }
     contentWrapper.style.left = positions[this.position].left + 'px'
     contentWrapper.style.top = positions[this.position].top + 'px'

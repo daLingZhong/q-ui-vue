@@ -24,6 +24,27 @@
           <button>右边</button>
         </q-tooltip>
       </div>
+      <br>
+      <div class="item">
+        <q-tooltip content="上左文字提示" position="topLeft">
+          <button>上左</button>
+        </q-tooltip>
+      </div>
+      <div class="item">
+        <q-tooltip content="上右文字提示" position="topRight">
+          <button>上右</button>
+        </q-tooltip>
+      </div>
+      <div class="item">
+        <q-tooltip content="下左文字提示" position="bottomLeft">
+          <button>下左</button>
+        </q-tooltip>
+      </div>
+      <div class="item">
+        <q-tooltip content="下右文字提示" position="bottomRight">
+          <button>下右</button>
+        </q-tooltip>
+      </div>
       <pre v-highlight>
         <code>
     &lt;q-tooltip content="上方文字提示" position="top"&gt;
@@ -94,7 +115,7 @@ export default class Tooltip extends Vue {}
 <style scoped>
   div[class="item"] {
     display: inline-block;
-    margin: 0 5px;
+    margin: 10px 5px;
   }
 </style>
 

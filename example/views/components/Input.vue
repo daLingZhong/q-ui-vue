@@ -135,11 +135,11 @@
       &lt;q-input placeholder="请输入文本内容" type="textarea" style="width: 600px;"&gt;&lt;/q-input&gt;
         </code>
       </pre>
-      <h3>内容提示</h3>
-      <p>文本域会自动适应高度变化</p>
+      <h3>输入时格式化展示</h3>
+      <p>结合组件，实现一个数值输入框，方便内容超长时的全量展现</p>
       <div class="item">
-        <q-tooltip trigger="click" :content="value">
-          <q-input maxlength="1" v-model="value" placeholder="请输入文本内容" style="width: 400px;"></q-input>
+        <q-tooltip trigger="click" :content="value" position="topLeft">
+          <q-input v-model="value" placeholder="请输入文本内容" style="width: 400px;"></q-input>
         </q-tooltip>
       </div>
       <pre v-highlight>
