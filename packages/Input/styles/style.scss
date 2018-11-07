@@ -1,0 +1,116 @@
+$border:#e6e8ea;
+
+@mixin pend {
+  display: table-cell;
+  border-radius: 2px;
+}
+@mixin icon($left, $top) {
+  color: #9195aa;
+  position: absolute;
+  top: 50%;
+  margin-left: $left;
+  margin-top: $top;
+}
+@mixin size($height, $lineHeight) {
+  height: $height;
+  line-height: $lineHeight;
+}
+
+.qinput {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  & > input, textarea {
+    border: 1px solid $border;
+    box-sizing: border-box;
+    outline: none;
+    vertical-align: middle;
+  }
+  & > input {
+    width: 100%;
+    font-size: 14px;
+  }
+  & > textarea {
+    resize: vertical;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    height: 36px;
+    font-size: 14px;
+    min-height: 36px;
+    overflow: visible;
+    border: 1px solid $border;
+    width: 100%;
+  }
+  &-large {
+    @include size(36px, 36px)
+  }
+  &-medium {
+    @include size(32px, 32px)
+  }
+  &-small {
+    @include size(24px, 24px)
+  }
+  &__normal, &__prepend, &__append {
+    padding: 0 16px;
+    border-radius: 2px;
+  }
+  &__normal {
+    display: inline-block;
+  }
+  &__prepend {
+    @include pend();
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+  &__append {
+    @include pend();
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  &__prefix {
+    padding-left: 30px;
+    &__icon > i {
+      @include icon(8px, -8px)
+    }
+  }
+  &__suffix {
+    padding-right: 30px;
+    &__icon > i {
+      @include icon(-24px, -8px)
+    }
+  }
+  &__enterButton {
+    display: table-cell;
+    vertical-align: middle;
+    width: 1px;
+  }
+  &-group {
+    &__prepend, &__append {
+      color: #939393;
+      display: table-cell;
+      border: 1px solid $border;
+      border-radius: 2px;
+      vertical-align: middle;
+      font-size: 13px;
+      background-color: #fafafa;
+      padding: 0 8px;
+    }
+    &__prepend {
+      border-right: none;
+    }
+    &__append {
+      border-left: none;
+    }
+    &--prepend {
+      display: inline-table;
+    }
+  }
+}
+
+input, textarea {
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

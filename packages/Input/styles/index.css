@@ -1,7 +1,0 @@
-/* input {
-  outline: none;
-  border: none;
-} */
-input:disabled, textarea:disabled {
-  cursor: not-allowed;
-}
