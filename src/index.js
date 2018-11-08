@@ -29,11 +29,11 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 export default {
+  install,
   Button,
   ButtonGroup,
   TabPane,
   Tabs,
   Tooltip,
   Input,
-  install,
 };

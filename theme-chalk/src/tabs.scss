@@ -1,0 +1,176 @@
+@import './common/var.scss';
+
+@mixin lineStyle {
+  content: '';
+  background-color: $borderColor;
+  display: block;
+}
+@mixin lineStyleHorizontal {
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  top: 0;
+}
+@mixin navPosition {
+  font-size: 14px;
+  color: #555555;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
+}
+@mixin horizontalAcitve {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 2px;
+  background-color: $primary;
+  height: 40px;
+  animation: height .5s forwards;
+}
+.qtab {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  & ul {
+    padding: 0;
+    list-style: none;
+  }
+  &__addButton {
+    line-height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #555555;
+  }
+  &__list {
+    &__card {
+      border: 1px solid $borderColor;
+      border-bottom: none;
+      margin:0 2px 0 0 !important;
+      &__active {
+        color: $primary !important;
+        &::after {
+          content: '';
+          background-color: #fff;
+          width: 100%;
+          height: 1px;
+          display: block;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+    &-top, &-bottom {
+      max-height: 42px;
+      overflow: hidden;
+      &::after {
+        @include lineStyle();
+        width: 100%;
+        height: 1px;
+      }
+    }
+    &-left, &-right {
+      height: 100%;
+      width: 160px;
+      display: inline-block;
+      position: relative;
+    }
+    &-left {
+      &::after {
+        @include lineStyle();
+        @include lineStyleHorizontal();
+        right: 0;
+      }
+    }
+    &-right {
+      &::before {
+        @include lineStyle();
+        @include lineStyleHorizontal();
+        left: 0;
+      }
+    }
+    &-top {
+      & li:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &__nav {
+    &-top, &-bottom {
+      @include navPosition();
+      display: inline-block;
+      width: auto;
+      margin: 0 8px;
+      padding: 0 16px;
+      position: relative;
+    }
+    &-left, &-right {
+      @include navPosition();
+      text-align: center
+    }
+  }
+  &__active {
+    &-horizontal, &-left, &-right {
+      color: $primary
+    }
+    &-horizontal::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      background-color: $primary;
+      animation: width .5s forwards;
+      margin-top: -1px;
+    }
+    &-left::after {
+      @include horizontalAcitve();
+      right: 0;
+    }
+    &-right::after {
+      @include horizontalAcitve();
+      left: 0;
+    }
+  }
+  &__disabled {
+    color: #999999;
+    pointer-events: none;
+  }
+}
+
+@keyframes width {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+@-webkit-keyframes width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes height {
+  0% {
+    height: 0;
+    margin-top: -20px;
+  }
+  100% {
+    height: 40px;
+    margin-top: -40px;
+  }
+}
+@-webkit-keyframes height {
+  0% {
+    height: 0;
+    margin-top: -20px;
+  }
+  100% {
+    height: 40px;
+    margin-top: -40px;
+  }
+}

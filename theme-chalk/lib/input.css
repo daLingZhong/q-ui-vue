@@ -1,0 +1,86 @@
+.qinput {
+  position: relative;
+  display: inline-block;
+  width: 100%; }
+  .qinput > input, .qinput textarea {
+    border: 1px solid #e6e8ea;
+    box-sizing: border-box;
+    outline: none;
+    vertical-align: middle; }
+  .qinput > input {
+    width: 100%;
+    font-size: 14px; }
+  .qinput > textarea {
+    resize: vertical;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    height: 36px;
+    font-size: 14px;
+    min-height: 36px;
+    overflow: visible;
+    border: 1px solid #e6e8ea;
+    width: 100%; }
+  .qinput-large {
+    height: 36px;
+    line-height: 36px; }
+  .qinput-medium {
+    height: 32px;
+    line-height: 32px; }
+  .qinput-small {
+    height: 24px;
+    line-height: 24px; }
+  .qinput__normal, .qinput__prepend, .qinput__append {
+    padding: 0 16px;
+    border-radius: 2px; }
+  .qinput__normal {
+    display: inline-block; }
+  .qinput__prepend {
+    display: table-cell;
+    border-radius: 2px;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important; }
+  .qinput__append {
+    display: table-cell;
+    border-radius: 2px;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important; }
+  .qinput__prefix {
+    padding-left: 30px; }
+    .qinput__prefix__icon > i {
+      color: #9195aa;
+      position: absolute;
+      top: 50%;
+      margin-left: 8px;
+      margin-top: -8px; }
+  .qinput__suffix {
+    padding-right: 30px; }
+    .qinput__suffix__icon > i {
+      color: #9195aa;
+      position: absolute;
+      top: 50%;
+      margin-left: -24px;
+      margin-top: -8px; }
+  .qinput__enterButton {
+    display: table-cell;
+    vertical-align: middle;
+    width: 1px; }
+  .qinput-group__prepend, .qinput-group__append {
+    color: #939393;
+    display: table-cell;
+    border: 1px solid #e6e8ea;
+    border-radius: 2px;
+    vertical-align: middle;
+    font-size: 13px;
+    background-color: #fafafa;
+    padding: 0 8px; }
+  .qinput-group__prepend {
+    border-right: none; }
+  .qinput-group__append {
+    border-left: none; }
+  .qinput-group--prepend {
+    display: inline-table; }
+
+input:disabled, textarea:disabled {
+  cursor: not-allowed; }

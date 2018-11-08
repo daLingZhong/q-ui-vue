@@ -12,7 +12,6 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator'
-import index from 'src';
 
 @Component
 export default class QTabPane extends Vue {
@@ -58,17 +57,16 @@ export default class QTabPane extends Vue {
 </script>
 
 <style>
-.qtabpane-topBottom,
-.qtabpane-leftRight {
-  display: inline-block; 
-  word-wrap: break-word;
-}
-.qtabpane-topBottom {
-  width: 100%;
-  height: calc(100% - 41px)
-}
-.qtabpane-leftRight {
-  width: calc(100% - 160px)
-}
+  .qtabpane-topBottom,
+  .qtabpane-leftRight {
+    display: inline-block; 
+    word-wrap: break-word;
+  }
+  .qtabpane-topBottom {
+    width: 100%;
+    height: calc(100% - 41px)
+  }
+  .qtabpane-leftRight {
+    width: calc(100% - 160px)
+  }
 </style>
-

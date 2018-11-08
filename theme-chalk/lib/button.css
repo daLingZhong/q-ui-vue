@@ -1,0 +1,164 @@
+.qbutton {
+  font-size: 14px;
+  border-radius: 2px;
+  font-family: 'PingFangSC', 'Microsoft YaHei';
+  outline: none;
+  margin: 0 5px;
+  color: #555555; }
+  .qbutton i {
+    display: inline-block;
+    margin-right: 8px;
+    color: #9195AA; }
+  .qbutton__content {
+    display: inline-block;
+    margin-top: -1px; }
+  .qbutton__disabled {
+    opacity: .6;
+    border-color: transparent; }
+    .qbutton__disabled__normal {
+      background-color: #f4f4f4 !important;
+      border-color: #e4e6e8 !important;
+      color: #a3a3a3 !important; }
+  .qbutton__loading {
+    animation: spin 2s infinite linear; }
+  .qbutton__large {
+    min-width: 78px;
+    min-height: 36px;
+    padding: 0 20px; }
+    .qbutton__large i {
+      margin: 0 8px; }
+  .qbutton__medium {
+    min-width: 72px;
+    min-height: 32px;
+    padding: 0 16px; }
+    .qbutton__medium i {
+      margin: 0 8px; }
+  .qbutton__small {
+    min-width: 56px;
+    min-height: 28px;
+    padding: 0 12px; }
+    .qbutton__small i {
+      margin: 0 6px; }
+  .qbutton__mini {
+    min-width: 48px;
+    min-height: 24px;
+    padding: 0 8px; }
+    .qbutton__mini i {
+      margin: 0 4px; }
+  .qbutton__normal {
+    background-color: #fff;
+    border: 1px solid #e4e6e8; }
+    .qbutton__normal:hover {
+      color: #44a0f1;
+      border-color: #44a0f1; }
+    .qbutton__normal:active {
+      color: #555555;
+      border-color: #e4e6e8; }
+  .qbutton__success {
+    background-color: #4ad886;
+    border: 1px solid #4ad886;
+    color: #fff; }
+    .qbutton__success:hover {
+      opacity: .6;
+      border-color: transparent; }
+    .qbutton__success:active {
+      opacity: 1; }
+    .qbutton__success i {
+      color: #fff; }
+  .qbutton__primary {
+    background-color: #44a0f1;
+    border: 1px solid #44a0f1;
+    color: #fff; }
+    .qbutton__primary:hover {
+      opacity: .6;
+      border-color: transparent; }
+    .qbutton__primary:active {
+      opacity: 1; }
+    .qbutton__primary i {
+      color: #fff; }
+  .qbutton__warning {
+    background-color: #fa8e3b;
+    border: 1px solid #fa8e3b;
+    color: #fff; }
+    .qbutton__warning:hover {
+      opacity: .6;
+      border-color: transparent; }
+    .qbutton__warning:active {
+      opacity: 1; }
+    .qbutton__warning i {
+      color: #fff; }
+  .qbutton__danger {
+    background-color: #f83b3b;
+    border: 1px solid #f83b3b;
+    color: #fff; }
+    .qbutton__danger:hover {
+      opacity: .6;
+      border-color: transparent; }
+    .qbutton__danger:active {
+      opacity: 1; }
+    .qbutton__danger i {
+      color: #fff; }
+  .qbutton__dashed {
+    background-color: #fff;
+    border: 1px dashed #e4e6e8; }
+    .qbutton__dashed:hover {
+      color: #44a0f1;
+      border-color: #44a0f1; }
+    .qbutton__dashed:active {
+      color: #555555;
+      border-color: #e4e6e8; }
+  .qbutton__text {
+    background-color: transparent !important;
+    border: none;
+    min-width: auto;
+    padding: 0;
+    font-size: 13px; }
+    .qbutton__text:hover {
+      color: #44a0f1; }
+
+.dotting {
+  display: inline-block;
+  min-width: 2px;
+  min-height: 2px;
+  box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor;
+  animation: dot 4s infinite step-start both; }
+  .dotting:before {
+    content: '...'; }
+  .dotting::before {
+    content: ''; }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes dot {
+  25% {
+    box-shadow: none; }
+  50% {
+    box-shadow: 2px 0 currentColor; }
+  75% {
+    box-shadow: 2px 0 currentColor, 6px 0 currentColor; } }
+
+@-webkit-keyframes dot {
+  25% {
+    box-shadow: none; }
+  50% {
+    box-shadow: 2px 0 currentColor; }
+  75% {
+    box-shadow: 2px 0 currentColor, 6px 0 currentColor; } }

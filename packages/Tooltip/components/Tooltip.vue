@@ -208,7 +208,3 @@ export default class QTooltip extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-@import '../styles/style.scss';
-</style>

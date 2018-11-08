@@ -26,8 +26,6 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
-import '../../style/iconfont.css'
-
 @Component
 export default class QButton extends Vue {
   @Prop(String) private icon !: string
@@ -93,7 +91,3 @@ export default class QButton extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-@import '../styles/style.scss';
-</style>

@@ -1,0 +1,113 @@
+$dark:#414141;
+$light:#ffffff;
+
+@mixin arrow($top, $left) {
+  content: '';
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: -1;
+  transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+}
+
+.tooltip {
+  display: inline-block;
+  vertical-align: top;
+  &__content {
+    position: absolute;
+    z-index: 9999;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  &__contentDark {
+    color: #d3d3d3;
+    background-color: $dark;
+  }
+  &__contentLight {
+    background-color: $light;
+    color: $dark;
+    box-shadow:  0px 2px 8px rgba(0,0,0,.15);
+  }
+  &__arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    &__topDark, &__topLight {
+      border-width: 6px 6px 0;
+    }
+    &__topDark {
+      border-color: $dark transparent transparent;
+      &::before, &::after {
+        @include arrow(-10px, -4px)
+      }
+    }
+    &__topLight {
+      border-color: $light transparent transparent;
+      &::before, &::after {
+        @include arrow(-10px, -4px)
+      }
+      &::before {
+        box-shadow: 1px 1px 2px 0px rgba(0,0,0,.1);
+      }
+    }
+    &__bottomDark, &__bottomLight {
+      border-width:0 6px 6px;
+    }
+    &__bottomDark {
+      border-color:transparent transparent $dark;
+    }
+    &__bottomLight {
+      border-color:transparent transparent $light;
+      &::before, &::after {
+        @include arrow(2px, -4px)
+      }
+      &::before {
+        box-shadow: -1px -1px 2px 0px rgba(0,0,0,.1); 
+      }
+    }
+    &__leftDark, &__leftLight {
+      border-width:6px 0 6px 6px;
+    }
+    &__leftDark {
+      border-color:transparent transparent transparent $dark;
+    }
+    &__leftLight {
+      border-color:transparent transparent transparent $light;
+      &::before, &::after {
+        @include arrow(-4px, -10px)
+      }
+      &::before {
+        box-shadow: 1px -1px 2px 0px rgba(0,0,0,.1);
+      }
+    }
+    &__rightDark, &__rightLight {
+      border-width:6px 6px 6px 0;
+    }
+    &__rightDark {
+      border-color:transparent $dark transparent transparent;
+    }
+    &__rightLight {
+      border-color:transparent $light transparent transparent;
+      &::before, &::after {
+        @include arrow(-4px, 2px)
+      }
+      &::before {
+        box-shadow: -1px 1px 2px 0px rgba(0,0,0,.1);    
+      }
+    }
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}

@@ -42,4 +42,3 @@ export default class QButtonGroup extends Vue {
     margin: 10px auto;
   }
 </style>
-

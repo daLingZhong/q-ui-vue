@@ -2,7 +2,7 @@ const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  lintOnSave: true,
+  lintOnSave: false,
   outputDir: './docs',
   baseUrl: './',
   productionSourceMap: false,
@@ -10,6 +10,11 @@ module.exports = {
   configureWebpack: {
     entry: {
       app: path.resolve(__dirname, './example/main.ts'),
+    },
+    resolve: {
+      alias: {
+        '@style': path.resolve(__dirname, './theme-chalk/src/index.scss'),
+      },
     },
     // optimization: {
     //   minimizer: [

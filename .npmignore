@@ -21,6 +21,10 @@ yarn-error.log*
 
 package-lock.json
 /tests/*
+/docs
+/package
+/src
+/build
 /public
 /example
 .brwoserslistrc

@@ -130,8 +130,3 @@ export default class QInput extends Vue {
 
 }
 </script>
-
-<style lang="scss">
-@import "../styles/style.scss";
-</style>
-

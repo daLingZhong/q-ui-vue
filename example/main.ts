@@ -6,6 +6,7 @@ import 'highlight.js/styles/atom-one-dark.css' // 样式文件
 import App from './App.vue'
 import router from './router'
 import QUI from '../'
+import '../theme-chalk/lib/index.css'
 
 Vue.use(QUI)
 // hljs.registerLanguage('javascript', javascript);

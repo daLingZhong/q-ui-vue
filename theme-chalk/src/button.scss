@@ -1,0 +1,223 @@
+@import './common/var.scss';
+$wordColor:#fff;
+
+@mixin colorButtonHover {
+  opacity: .6;
+  border-color: transparent;
+}
+@mixin normalButtonHover {
+  color: $primary;
+  border-color:$primary;
+}
+@mixin normalButtonActive {
+  color: #555555;
+  border-color:$borderColor;
+}
+
+.qbutton {
+  font-size: 14px;
+  border-radius: 2px;
+  font-family: 'PingFangSC', 'Microsoft YaHei';
+  outline: none;
+  margin: 0 5px;
+  color: #555555;
+  & i {
+    display: inline-block;
+    margin-right: 8px;
+    color: #9195AA;
+  }
+  &__content {
+    display: inline-block;
+    margin-top: -1px;
+  }
+  &__disabled {
+    opacity: .6;
+    border-color: transparent;
+    &__normal {
+      background-color: #f4f4f4 !important;
+      border-color: $borderColor !important;
+      color: #a3a3a3 !important;
+    }
+  }
+  &__loading {
+    animation: spin 2s infinite linear;
+  }
+  &__large {
+    min-width: 78px;
+    min-height: 36px;
+    padding: 0 20px;
+    & i {
+      margin: 0 8px;
+    }
+  }
+  &__medium {
+    min-width: 72px;
+    min-height: 32px;
+    padding: 0 16px;
+    & i {
+      margin: 0 8px;
+    }
+  }
+  &__small {
+    min-width: 56px;
+    min-height: 28px;
+    padding: 0 12px;
+    & i {
+      margin: 0 6px;
+    }
+  }
+  &__mini {
+    min-width: 48px;
+    min-height: 24px;
+    padding: 0 8px;
+    & i {
+      margin: 0 4px
+    }
+  }
+  &__normal {
+    background-color: $wordColor;
+    border: 1px solid $borderColor;
+    &:hover {
+      @include normalButtonHover;
+    }
+    &:active {
+      @include normalButtonActive;
+    }
+  }
+  &__success {
+    background-color: $success;
+    border: 1px solid $success;
+    color: $wordColor;
+    &:hover {
+      @include colorButtonHover;
+    }
+    &:active {
+      opacity: 1;
+    }
+    & i {
+      color: $wordColor
+    }
+  }
+  &__primary {
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: $wordColor;
+    &:hover {
+      @include colorButtonHover;
+    }
+    &:active {
+      opacity: 1;
+    }
+    & i {
+      color: $wordColor
+    }
+  }
+  &__warning {
+    background-color: $warning;
+    border: 1px solid $warning;
+    color: $wordColor;
+    &:hover {
+      @include colorButtonHover;
+    }
+    &:active {
+      opacity: 1;
+    }
+    & i {
+      color: $wordColor
+    }
+  }
+  &__danger {
+    background-color: $danger;
+    border: 1px solid $danger;
+    color: $wordColor;
+    &:hover {
+      @include colorButtonHover;
+    }
+    &:active {
+      opacity: 1;
+    }
+    & i {
+      color: $wordColor
+    }
+  }
+  &__dashed {
+    background-color: $wordColor;
+    border: 1px dashed $borderColor;
+    &:hover {
+      @include normalButtonHover;
+    }
+    &:active {
+      @include normalButtonActive;
+    }
+  }
+  &__text {
+    background-color: transparent !important;
+    border: none;
+    min-width: auto;
+    padding: 0;
+    font-size: 13px;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+.dotting {
+  display: inline-block;
+  min-width: 2px;
+  min-height: 2px;
+  box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor;
+  animation: dot 4s infinite step-start both;
+  &:before {
+    content: '...'
+  }
+  &::before{
+    content: ''
+  }
+}
+
+@keyframes spin {
+  0%   {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  0%   {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+@keyframes dot {
+  25% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 2px 0 currentColor;
+  }
+  75% {
+    box-shadow: 2px 0 currentColor, 6px 0 currentColor;
+  }
+}
+@-webkit-keyframes dot {
+  25% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 2px 0 currentColor;
+  }
+  75% {
+    box-shadow: 2px 0 currentColor, 6px 0 currentColor;
+  }
+}
