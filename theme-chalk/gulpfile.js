@@ -1,18 +1,18 @@
 'use strict';
 
-var gulp = require("gulp"),
-  sass = require("gulp-sass"),
-  del = require('del')
-var cssmin = require('gulp-cssmin');
+var gulp = require("gulp")
+var sass = require("gulp-sass")
+var del = require('del')
+var cssmin = require('gulp-cssmin')
+var concat = require('gulp-concat')
+var mincss = require('gulp-clean-css')
 
 gulp.task("compile", function(){
   gulp.src(['./src/*.scss'])
     .pipe(sass())
     // .pipe(autoprefixer("last 3 version","safari 5", "ie 8", "ie 9"))
-    // .pipe(concat('q-ui-common.css'))
-    // .pipe(gulp.dest("./lib"))
-    // .pipe(rename('q-ui.min.css'))
-    // .pipe(minifycss())
+    .pipe(concat('index.css'))
+    .pipe(mincss())
     .pipe(gulp.dest('./lib'));
 });
 
@@ -22,12 +22,12 @@ gulp.task('copyfont', function() {
     .pipe(gulp.dest('./lib/fonts'));
 });
 
-gulp.task("watch", function(){
-  gulp.watch(sassFiles, ["sass"]);
-});
-
 gulp.task('clean', function() {
   del(['lib']);
 });
 
 gulp.task('build', ['clean', 'compile', 'copyfont']);
+
+gulp.task("watch", function(){
+  gulp.watch(['./src/*.scss', './src/common/*.scss'], ["build"]);
+});
